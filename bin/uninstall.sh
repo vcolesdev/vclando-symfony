@@ -1,24 +1,33 @@
 #!/bin/bash
 # Unisntall script
+APPLICATION=application
 
+# Stop Lando services and destroy containers.
+# Let Lando prompt the user to destroy containers.
+lando stop && lando destroy
+
+# Prompt the user to remove Symfony.
 while true; do
-
 read -p "Remove Symfony and ALL its components? (y/n) " yn
 
+# Options
 case $yn in
+  # If yes, remove application folder and its contents.
   [yY] ) echo "Removing Symfony and application folder..."
     break;;
+  # If no, exit the application.
   [nN] ) echo "Abort mission! Exiting..."
     exit;;
+  # User did not enter a valid response.
   * ) echo "Please choose a valid response, y/n";;
-esac
+esac; done
 
-done
-
-if [ -d "application" ]
+# Check for application dir.
+if [ -d "$APPLICATION" ]
   then
-    rm -Rf application && echo "That's all for now, folks!  Symfony removed."
+    # If application dir is found, delete it and its contents.
+    rm -Rf $APPLICATION && echo "That's all for now, folks!  Symfony removed."
   else
+    # Nothing to remove....
     echo "No application directory found. Exiting..."
 fi
-
