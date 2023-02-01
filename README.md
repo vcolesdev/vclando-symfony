@@ -18,7 +18,7 @@ Features list here.
 
 Lando comes with its own helper `console` utility, which you can use to perform Symfony operations.
 
-    `lando console make:controller DefaultController`
+`lando console make:controller DefaultController`
 
 - You can replace `DefaultController` with whatever you like.  
 - Update the route annotation path in your controller to `/` if you'd like it to serve as your homepage or application index.
@@ -27,16 +27,16 @@ Lando comes with its own helper `console` utility, which you can use to perform 
 
 In order for our database to work, we need to connect it to Symfony.  View your database information by using:
 
-    `lando info`
+`lando info`
 
 This should display relevant information about your app, including your database credentials.  By default, it should look like below:
 
-    ```
-    host: database
-    user: symfony
-    pass: symfony
-    dbname: symfony
-    ```
+```
+host: database
+user: symfony
+pass: symfony
+dbname: symfony
+```
 
 Navigate to your `.env` file and replace `DATABASE_URL` with the info supplied by `lando info`.
 
