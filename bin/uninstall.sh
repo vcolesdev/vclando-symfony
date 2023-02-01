@@ -2,10 +2,6 @@
 # Unisntall script
 APPLICATION=application
 
-# Stop Lando services and destroy containers.
-# Let Lando prompt the user to destroy containers.
-lando stop && lando destroy
-
 # Prompt the user to remove Symfony.
 while true; do
 read -p "Remove Symfony and ALL its components? (y/n) " yn

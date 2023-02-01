@@ -37,7 +37,15 @@ mkdir $APPLICATION && cd $APPLICATION || exit
 rm -rf tmp && composer create-project symfony/skeleton:"6.2.*" tmp && cp -r tmp/. .
 echo "Done installing Symfony 6.2!  Moving on to Composer packages..."
 
-# Install Symfony dependencies
+# Install Symfony dependencies.
 composer require webapp
 composer require annotations encore
 echo "Symfony dependencies installed successfully!"
+
+# Generate our first IndexController.
+echo "Generating our first IndexController at src/Controller..."
+php bin/console make:controller IndexController
+echo "IndexController created!"
+
+# Exit application dir
+cd ../
