@@ -7,7 +7,7 @@ config:
 services:
   appserver:
     type: php:8.2
-    via: apache
+    via: apache:2.4
     run:
       - bash ./bin/install.sh
   phpmyadmin:
@@ -16,8 +16,6 @@ services:
     type: mailhog
     hogfrom:
       - appserver
-  node:
-    type: node
 
 proxy:
   mailhog:
@@ -26,10 +24,6 @@ proxy:
     - pma.vclando-symfony.lndo.site
 
 tooling:
-  symfony:
-    service: appserver
-    description: Run Symfony console commands.
-    cmd: php bin/console
   diff:
     service: appserver
     description: Generate a database migration by comparing your current database to your mapping information.
@@ -46,10 +40,10 @@ tooling:
     description: Warms Symfony cache
     cmd: php bin/console cache:warmup
   npm:
-    service: node
+    service: appserver
     description: Run the npm package manager.
     cmd: npm
   encore:
-    service: node
+    service: appserver
     description: Runs Webpack Encore.
-    cmd: node_modules/.bin/encore
+    cmd: application/node_modules/.bin/encore

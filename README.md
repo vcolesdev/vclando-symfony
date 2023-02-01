@@ -4,7 +4,10 @@ Description here.
 
 ## Features
 
-Features list here.
+- Custom `lando.yml` config.
+- Php 8.2 and Apache
+- Appserver, PhpMyAdmin, Mailhog, and Node services
+- Custom Tooling
 
 ## Install
 
@@ -55,14 +58,16 @@ Issues you may run into during installation.
 
 ### "Lando should never be run as root like ever!"
 
-See post [Add Current User to Docker Group on MacOS](https://stackoverflow.com/questions/70369278/how-to-add-the-current-user-to-the-docker-group-on-macos)
+- See post [Add Current User to Docker Group on MacOS](https://stackoverflow.com/questions/70369278/how-to-add-the-current-user-to-the-docker-group-on-macos)
 
 ## Helpful Links
 
-- Link 1
-- Link 2
-- Link 3
+- [Get Lando](https://lando.dev/)
+- [Get Symfony](https://symfony.com/)
+- [Documentation - Lando](https://docs.lando.dev/)
+- [Documentation - Lando Symfony Plugin](https://docs.lando.dev/symfony/)
+- [Documentation - Getting Started with Symfony](https://symfony.com/doc/current/setup.html)
 
 ## Thank You
 
-Thank you message.
+Thank you for your interest in VC Lando Symfony.  This is a work in progress!
