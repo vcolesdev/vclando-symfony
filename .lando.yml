@@ -31,6 +31,7 @@ tooling:
   migrate:
     service: appserver
     description: Execuste a database migration to a specified version or the latest available version.
+    cmd: php bin/console doctrine:migrations:migrate
   cache:clear:
     service: appserver
     description: Clears Symfony cache.
@@ -39,11 +40,3 @@ tooling:
     service: appserver
     description: Warms Symfony cache
     cmd: php bin/console cache:warmup
-  npm:
-    service: appserver
-    description: Run the npm package manager.
-    cmd: npm
-  encore:
-    service: appserver
-    description: Runs Webpack Encore.
-    cmd: application/node_modules/.bin/encore
